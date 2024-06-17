@@ -1,0 +1,26 @@
+.chassis-frame {
+    min-width: calc(250px + 10vw);
+    padding: 10px;
+    min-height: calc(300px + 10vh);
+    background-color: rgb(156, 162, 174);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 rgb(0, 0, 0);
+    
+}
+
+.display {
+    
+    padding: calc(5px + 1vw);
+    width: 100%;
+    /* height: fit-content; */
+    border-radius: inherit;
+}
+
+.screen{
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: calc(15px + 2vh);
+    border-radius: 2.5px;
+    box-shadow: 1px 1px 0 rgb(0, 0, 0);
+}
