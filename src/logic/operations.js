@@ -32,91 +32,139 @@ function fetchCharacter( operation ) {
     return buttons[operation];
 }
 
-// function fetchCallback( operation ) {
+function fetchCallback( operation ) {
     
-//     let callback;
-//     switch (operation) {
-//         case "percent":
-//             callback = (num1) => {
-//                 return (num1 <= 100) ? num1 / 100 : 0; 
-//             }
+    let callback;
+    switch (operation) {
+        case "percent":
+            callback = (num1) => {
+                return (num1 <= 100) ? num1 / 100 : 0; 
+            }
 
-//             break;
-//         case "clear entry":
-//             callback = () => {
+            break;
+        case "clear entry":
+            callback = () => {
                 
-//             }
+            }
 
-//             break;
-//         case "clear all":
-//             callback = 
-//             break;
-//         case "clear digit":
-//             callback = 
-//             break;
-//         case "factor":
-//             callback = 
-//             break;
-//         case "square":
-//             callback = 
-//             break;
-//         case "square root":
-//             callback = 
-//             break;
-//         case "divide":
-//             callback = 
-//             break;
-//         case "7":
-//             callback = 
-//             break;
-//         case "8":
-//             callback = 
-//             break;
-//         case "9":
-//             callback = 
-//             break;
-//         case "*":
-//             callback = 
-//             break;
-//         case "4":
-//             callback = 
-//             break;
-//         case "5":
-//             callback = 
-//             break;
-//         case "6":
-//             callback = 
-//             break;
-//         case "-":
-//             callback = 
-//             break;
-//         case "1":
-//             callback = 
-//             break;
-//         case "2" :
-//             callback = 
-//             break;
-//         case "3":
-//             callback = 
-//             break;
-//         case "+":
-//             callback = 
-//             break;
-//         case "flip":
-//             callback = 
-//             break;
-//         case "0":
-//             callback = 
-//             break;
-//         case ".":
-//             callback = 
-//             break;
-//         case "=":
-//             callback = 
-//             break;
-//     }
-// }
+            break;
+        case "clear all":
+            callback = () => {
+                
+            }
+            break;
+        case "clear digit":
+            callback = () => {
+                
+            }
+            break;
+        case "factor":
+            callback = () => {
+                
+            }
+            break;
+        case "square":
+            callback = () => {
+                
+            }
+            break;
+        case "square root":
+            callback = () => {
+                
+            }
+            break;
+        case "divide":
+            callback = () => {
+                
+            }
+            break;
+        case "7":
+            callback = () => {
+                
+            }
+            break;
+        case "8":
+            callback = () => {
+                
+            }
+            break;
+        case "9":
+            callback = () => {
+                
+            }
+            break;
+        case "*":
+            callback = (display) => { 
+                let x = display.slice(0, display.indexOf(" "));
+                let y = display.slice(display.lastIndexOf(" "),)
+                return Number(x) * Number(y);
+            }
+            break;
+        case "4":
+            callback = () => {
+                
+            }
+            break;
+        case "5":
+            callback = () => {
+                
+            }
+            break;
+        case "6":
+            callback = () => {
+                
+            }
+            break;
+        case "-":
+            callback = () => {
+                
+            }
+            break;
+        case "1":
+            callback = () => {
+                
+            }
+            break;
+        case "2" :
+            callback = () => {
+                
+            }
+            break;
+        case "3":
+            callback = () => {
+                
+            }
+            break;
+        case "+":
+            callback = () => {
+                
+            }
+            break;
+        case "flip":
+            callback = () => {
+                
+            }
+            break;
+        case "0":
+            callback = () => {
+                
+            }
+            break;
+        case ".":
+            callback = () => {
+                
+            }
+            break;
+        case "=":
+            callback = () => {
+                
+            } 
+            break;
+    }
+    return callback;
+}
 
 export {
-    fetchCharacter
+    fetchCharacter,
+    fetchCallback
 }

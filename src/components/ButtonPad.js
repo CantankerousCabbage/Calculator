@@ -3,33 +3,33 @@ import Button from './Button';
 
 import "../styles/buttons.css";
 
-const ButtonPad = () => {
+const ButtonPad = ({ update, calculate}) => {
     return (
         <div className="button-cont">
-            <Button id={"b1"} char={"percent"} operation={""} />
-            <Button id={"b2"} char={"clear entry"} operation={""} />
-            <Button id={"b3"} char={"clear all"} operation={""} />
-            <Button id={"b4"} char={"clear digit"} operation={""} />
-            <Button id={"b5"} char={"factor"} operation={""} />
-            <Button id={"b6"} char={"square"} operation={""} />
-            <Button id={"b7"} char={"square root"} operation={""} />
-            <Button id={"b8"} char={"divide"} operation={""} />
-            <Button id={"b9"} char={"7"} operation={""} />
-            <Button id={"b10"} char={"8"} operation={""} />
-            <Button id={"b11"} char={"9"} operation={""} />
-            <Button id={"b12"} char={"*"} operation={""} />
-            <Button id={"b13"} char={"4"} operation={""} />
-            <Button id={"b14"} char={"5"} operation={""} />
-            <Button id={"b15"} char={"6"} operation={""} />
-            <Button id={"b16"} char={"-"} operation={""} />
-            <Button id={"b17"} char={"1"} operation={""} />
-            <Button id={"b18"} char={"2"} operation={""} />
-            <Button id={"b19"} char={"3"} operation={""} />
-            <Button id={"b20"} char={"+"} operation={""} />
-            <Button id={"b21"} char={"flip"} operation={""} />
-            <Button id={"b22"} char={"0"} operation={""} />
-            <Button id={"b23"} char={"."} operation={""} />
-            <Button id={"b24"} char={"="} operation={""} />
+            <Button id={"b1"} char={"percent"} operation={update} />
+            <Button id={"b2"} char={"clear entry"} operation={update} />
+            <Button id={"b3"} char={"clear all"} operation={update} />
+            <Button id={"b4"} char={"clear digit"} operation={update} />
+            <Button id={"b5"} char={"factor"} operation={update} />
+            <Button id={"b6"} char={"square"} operation={update} />
+            <Button id={"b7"} char={"square root"} operation={update} />
+            <Button id={"b8"} char={"divide"} operation={update} />
+            <Button id={"b9"} char={"7"} operation={update} />
+            <Button id={"b10"} char={"8"} operation={update} />
+            <Button id={"b11"} char={"9"} operation={update} />
+            <Button id={"b12"} char={"*"} operation={update} />
+            <Button id={"b13"} char={"4"} operation={update} />
+            <Button id={"b14"} char={"5"} operation={update} />
+            <Button id={"b15"} char={"6"} operation={update} />
+            <Button id={"b16"} char={"-"} operation={update} />
+            <Button id={"b17"} char={"1"} operation={update} />
+            <Button id={"b18"} char={"2"} operation={update} />
+            <Button id={"b19"} char={"3"} operation={update} />
+            <Button id={"b20"} char={"+"} operation={update} />
+            <Button id={"b21"} char={"flip"} operation={update} />
+            <Button id={"b22"} char={"0"} operation={update} />
+            <Button id={"b23"} char={"."} operation={update} />
+            <Button id={"b24"} char={"="} operation={calculate} />
         </div>
     )
 }
