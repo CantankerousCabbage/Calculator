@@ -1,9 +1,12 @@
 import React from "react";
 
-const Button = ({ id }) => {
+import { fetchCharacter } from "../logic/operations";
+
+const Button = ({ id,  char, operation}) => {
+
     return (
-        <button id={id} className="button-base" onClick={""}>
-            0
+        <button id={id} className="button-base" onClick={() => {return operation}}>
+            {fetchCharacter(char)}
         </button>
     )
 }
