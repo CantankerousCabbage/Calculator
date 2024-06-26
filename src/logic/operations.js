@@ -37,15 +37,14 @@ function fetchCallback( operation ) {
     let callback;
     switch (operation) {
         case "bracketL":
-            callback = (num1) => {
-                return (num1 <= 100) ? num1 / 100 : 0; 
+            callback = () => {
+                
             }
 
             break;
         case "bracketR":
-            callback = (display) => {
-                let x = display.trim();
-                x = (x.find(" "))
+            callback = () => {
+            
             }
             break;
 
@@ -55,12 +54,17 @@ function fetchCallback( operation ) {
             }
             break;
 
-        case "back space":
-            callback = () => {
-                
+        case "backspace":
+            callback = (display) => {
+                let temp = display.trim();
+                let index = (temp.lastIndexOf(" "));
+
+                let x = (index >= 0) ? display.slice(0,index) : 
+                (temp.length > 1) ? temp.slice(0, temp.length - 1) : 0;
+                return x;
             }
             break;
-            
+
         case "factor":
             callback = () => {
                 

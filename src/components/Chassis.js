@@ -25,6 +25,14 @@ const Chassis = () => {
         }
     }
 
+    const editDisplay = ( event ) => {
+        const value = event.target.getAttribute("value");
+        let operation = fetchCallback(value);
+
+        let temp = operation(display);
+        setDisplay(temp);
+    }
+
     const appendDisplay = ( event ) => {
 
         //No inherent value property on buttons (forms only)
@@ -55,7 +63,7 @@ const Chassis = () => {
     return (
         <div className="chassis-frame">
             <Screen display={display}/>
-            <ButtonPad update={appendDisplay} calculate={calculate}/>
+            <ButtonPad append={appendDisplay} edit={editDisplay} calculate={calculate}/>
         </div>
     )
 }
