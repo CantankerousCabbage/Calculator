@@ -6,10 +6,10 @@ import "../styles/buttons.css";
 const ButtonPad = ({ update, calculate}) => {
     return (
         <div className="button-cont">
-            <Button id={"b1"} char={"percent"} operation={update} />
-            <Button id={"b2"} char={"clear entry"} operation={update} />
+            <Button id={"b1"} char={"bracketL"} operation={update} />
+            <Button id={"b2"} char={"bracketR"} operation={update} />
             <Button id={"b3"} char={"clear all"} operation={update} />
-            <Button id={"b4"} char={"clear digit"} operation={update} />
+            <Button id={"b4"} char={"backspace"} operation={update} />
             <Button id={"b5"} char={"factor"} operation={update} />
             <Button id={"b6"} char={"square"} operation={update} />
             <Button id={"b7"} char={"square root"} operation={update} />

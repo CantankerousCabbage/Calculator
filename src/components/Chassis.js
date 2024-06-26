@@ -18,7 +18,7 @@ const Chassis = () => {
 
 
     const calculate = () => {
-        console.log("yes");
+        // console.log("yes");
         if(currentOperation.operation){
             let result = currentOperation.operation(display);
             setDisplay(result);
@@ -31,18 +31,24 @@ const Chassis = () => {
         const value = event.target.getAttribute("value");
         let temp = display;
         
+        //If number entered else operation
         if(!isNaN(Number(value))){
-            console.log("yes");
-            temp = (temp === 0) ? value: temp + value;
+            
+            if(temp === 0){
+                temp = value;
+            } else {
+                temp = temp + value;
+            }
+            
         } else {
-            if(value !== currentOperation.symbol){
+            
+
+            if(temp !==  0 && value !== currentOperation.symbol){
                 temp =  temp + ` ${value} `;
                 setOperation({ symbol: value, operation: fetchCallback(value)})
             }
         }
-        //Concat if number otherwise concat with space if not same op.
-        // temp = (typeof value === 'number') ? temp + value : (value === currentOperation) ? 
-        // temp : temp + ` ${value} `;
+       
         setDisplay(temp);
     }
 

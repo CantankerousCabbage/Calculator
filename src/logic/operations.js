@@ -2,10 +2,10 @@
 
 function fetchCharacter( operation ) {
     const buttons = {
-        "percent": "%",
-        "clear entry": "CE",
+        "bracketL": "(",
+        "bracketR": ")",
         "clear all": "C",
-        "clear digit": <>&#8592;</>,
+        "backspace": <>&#8592;</>,
         "factor": <><sup>1</sup>/<sub>x</sub></>,
         "square": <>x<sup>2</sup></>,
         "square root": <>&#8730;</>,
@@ -36,62 +36,56 @@ function fetchCallback( operation ) {
     
     let callback;
     switch (operation) {
-        case "percent":
+        case "bracketL":
             callback = (num1) => {
                 return (num1 <= 100) ? num1 / 100 : 0; 
             }
 
             break;
-        case "clear entry":
-            callback = () => {
-                
+        case "bracketR":
+            callback = (display) => {
+                let x = display.trim();
+                x = (x.find(" "))
             }
-
             break;
+
         case "clear all":
             callback = () => {
-                
+                return 0;
             }
             break;
-        case "clear digit":
+
+        case "back space":
             callback = () => {
                 
             }
             break;
+            
         case "factor":
             callback = () => {
                 
             }
             break;
         case "square":
-            callback = () => {
-                
+            callback = (display) => {
+                let x = Number(display.trim());
+                return x * x;
             }
             break;
         case "square root":
-            callback = () => {
-                
+            callback = (display) => {
+                let x = Number(display.trim());
+                return x * x;
             }
             break;
+
         case "divide":
-            callback = () => {
-                
+            callback = (display) => {
+                let x = display.slice(0, display.indexOf(" "));
+                let y = display.slice(display.lastIndexOf(" "),) 
+                return (Number(x) / Number(y));
             }
-            break;
-        case "7":
-            callback = () => {
-                
-            }
-            break;
-        case "8":
-            callback = () => {
-                
-            }
-            break;
-        case "9":
-            callback = () => {
-                
-            }
+
             break;
         case "*":
             callback = (display) => { 
@@ -100,41 +94,13 @@ function fetchCallback( operation ) {
                 return Number(x) * Number(y);
             }
             break;
-        case "4":
-            callback = () => {
-                
-            }
-            break;
-        case "5":
-            callback = () => {
-                
-            }
-            break;
-        case "6":
-            callback = () => {
-                
-            }
-            break;
+
         case "-":
             callback = () => {
                 
             }
             break;
-        case "1":
-            callback = () => {
-                
-            }
-            break;
-        case "2" :
-            callback = () => {
-                
-            }
-            break;
-        case "3":
-            callback = () => {
-                
-            }
-            break;
+
         case "+":
             callback = () => {
                 
@@ -145,11 +111,7 @@ function fetchCallback( operation ) {
                 
             }
             break;
-        case "0":
-            callback = () => {
-                
-            }
-            break;
+
         case ".":
             callback = () => {
                 
