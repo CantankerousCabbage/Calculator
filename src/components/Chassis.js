@@ -13,16 +13,30 @@ const OPERATION = "operation";
 const Chassis = () => {
 
     const [display, setDisplay] = useState(0);
-    const [type, setType] = useState(null); 
+    const [result, setResult] = useState(false); 
     const [currentOperation, setOperation] = useState( {symbol: null, operation: null} );
 
 
-    const calculate = () => {
-        // console.log("yes");
+    const calculate = ( event ) => {
+        let result;
+
         if(currentOperation.operation){
-            let result = currentOperation.operation(display);
-            setDisplay(result);
+            //Handle operations on the basis of "="
+            result = currentOperation.operation(display);
+            setDisplay(String(result));
+
+        } else if( event !== null) {
+            //Handle single number operations
+            const value = event.target.getAttribute("value");
+            let operation = fetchCallback(value);
+            result = operation(display);
+
+            setOperation({ symbol: value, operation: operation});
+            setDisplay(String(result));  
         }
+
+        //Flag that current display is a result
+        setResult(true);
     }
 
     const editDisplay = ( event ) => {
@@ -34,7 +48,7 @@ const Chassis = () => {
     }
 
     const appendDisplay = ( event ) => {
-
+        console.log(event);
         //No inherent value property on buttons (forms only)
         const value = event.target.getAttribute("value");
         let temp = display;
@@ -42,10 +56,14 @@ const Chassis = () => {
         //If number entered else operation
         if(!isNaN(Number(value))){
             
-            if(temp === 0){
+            if(temp === 0 || result){
                 temp = value;
+                
+                //Result replaced with new entry so flip result flag.
+                setResult(false);
             } else {
                 temp = temp + value;
+                console.log("maintain");
             }
             
         } else {

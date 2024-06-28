@@ -104,13 +104,17 @@ function fetchCallback( operation ) {
 
         case "-":
             callback = () => {
-                
+                let x = display.slice(0, display.indexOf(" "));
+                let y = display.slice(display.lastIndexOf(" "),)
+                return Number(x) - Number(y);
             }
             break;
 
         case "+":
             callback = () => {
-                
+                let x = display.slice(0, display.indexOf(" "));
+                let y = display.slice(display.lastIndexOf(" "),)
+                return Number(x) + Number(y);
             }
             break;
         case "flip":
