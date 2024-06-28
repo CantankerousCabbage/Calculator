@@ -66,9 +66,12 @@ function fetchCallback( operation ) {
             break;
 
         case "factor":
-            callback = () => {
-                
+            callback = ( display ) => {
+
+                let conversion = Number(display);
+                return (isNaN(Number(conversion))) ? display : 1 / conversion; 
             }
+
             break;
         case "square":
             callback = (display) => {

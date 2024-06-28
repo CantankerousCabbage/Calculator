@@ -10,7 +10,7 @@ const ButtonPad = ({ append, edit, calculate}) => {
             <Button id={"b2"} char={"bracketR"} operation={append} />
             <Button id={"b3"} char={"clear all"} operation={edit} />
             <Button id={"b4"} char={"backspace"} operation={edit} />
-            <Button id={"b5"} char={"factor"} operation={append} />
+            <Button id={"b5"} char={"factor"} operation={edit} />
             <Button id={"b6"} char={"square"} operation={append} />
             <Button id={"b7"} char={"square root"} operation={append} />
             <Button id={"b8"} char={"divide"} operation={append} />
